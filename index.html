@@ -5,18 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Timers and Intervals</title>
+    <title>Quiz-Code</title>
 </head>
 
 <body>
+    <header></header>
     <h1>
         <center>Quiz-Code</center>
     </h1>
-    <div id="main"></div>
-    <p>Answer the following questions within the time limit. Keep in mind that incorrect answers will by penalized and
-        subtract your remaining time by ten seconds!</p>
-    <button id="start">Start Quiz</button>
-    <script src="./script.js"></script>
+    <div id="main">
+        <p>Answer the following questions within the time limit. Keep in mind that incorrect answers will be penalized
+            and
+            subtract your remaining time by ten seconds!</p>
+        <button id="start">Start Quiz</button>
+    </div>
+    <div id=questions>Questions</div>
+
+    <div id="final">
+        <p>All Done</p>
+        <p>Your final score is</p>
+        <p>Enter initals</p>
+        <button id="submit">Submit</button>
+    </div>
+
+    <div id="highscores">
+        <button id="back">Go Back</button>
+        <button id="clear">Clear Highscores</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
