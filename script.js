@@ -1,13 +1,12 @@
 var questions = document.querySelector("#questions")
-var start = document.querySelector("#start")
-var submit = document.querySelector("#submit")
-var highscores = document.querySelector("#highscores")
+var startButton = document.querySelector("#startButton")
+var submitButton = document.querySelector("#submitButton")
+var clearButton = document.querySelector("#clearButton")
+var backButton = document.querySelector("#backButton")
 var score = 0
 var right = 0
 var wrong = 0
 
-function
-    start.addEventListener("click", function  )
 
 var secondsLeft = 75;
 
@@ -25,25 +24,24 @@ for (var i = 0; i < questions.length; i++) {
 alert("you got" + score + "/" + question.length);
 
 function setTime() {
-    var timerInterval = setInterval(timeFn, 1000);
-    function timeFn() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft;
+    var timerInterval = setInterval(timeFn, 75000);
+}
+function timeFn() {
+    secondsLeft--;
 
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-        }
+    if (secondsLeft === 0) {
+        clearInterval(timerInterval);
     }
 }
-
+function stopTimer() {
+    secondsElapsed = 0;
+    setTime();
+    renderTime();
 }
-
-setTime();
-
-// When Quiz-form is submitted...
-.addEventListener("submit", function (event) {
-    event.preventDefault();
-
+startButton.addEventListener("click", startTimer);
+submitButton.addEventListener("click", submitQuiz);
+backButton.addEventListener("click");
+clearButton.addEventListener("click")
 
 
 
