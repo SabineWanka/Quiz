@@ -76,7 +76,7 @@ function startTimer() {
     interval = setInterval(function () {
         secondsElapsed++;
         renderTime();
-        75000);
+    }, 75000);
 }
 function timeFn() {
     secondsLeft--;
