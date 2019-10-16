@@ -12,8 +12,30 @@ var wrong = 0
 
 var secondsLeft = 75000;
 
-getHighScores();
+var questions = [
+    {
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings", "booleans", "alerts", "numbers"],
+        answer: "alerts"
+    },
+    {
+        title: "The condition in an if / else statement is enclosed within ____.",
+        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
+    },
+    ///etc.
+];
 
+questionsArray[step].choices.forEach(function (choices) {
+    var option = document.createElement("p")
+    option.textContent = choices
+    questions.appendChild(option)
+})
+// getHighScores() which is the sum of the right answer plus the remaining time 
+
+function setTime() {
+
+}
 for (var i = 0; i < questions.length; i++) {
     var response = questions[i]
     if (response === questions[i.answer]) {
@@ -30,42 +52,42 @@ alert("you got" + score + "/" + questions.length);
 
 function startButton() {
     var questions = document.querySelector("#questions")
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    if (questions.style.display === "none") {
+        questions.style.display = "block";
     }
     else {
-        x.style.display = "none";
+        questions.style.display = "none";
     }
 }
 
-function submitButton() {
+function submitQuiz() {
     var final = document.querySelector("#final")
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    if (final.style.display === "none") {
+        final.style.display = "block";
     }
     else {
-        x.style.display = "none";
+        final.style.display = "none";
     }
 }
 
-function backButton() {
+function goBack() {
     var highScores = document.querySelector("#highScores")
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    if (highScores.style.display === "none") {
+        highScores.style.display = "block";
     }
     else {
-        x.style.display = "none";
+        highScores.style.display = "none";
     }
 
 }
 
-function clearButton() {
+function clearHighscores() {
     var highScores = document.querySelector("#highScores")
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    if (highScores.style.display === "none") {
+        highScores.style.display = "block";
     }
     else {
-        x.style.display = "none";
+        highScores.style.display = "none";
     }
 
 }
@@ -89,6 +111,8 @@ function stopTimer() {
     setTime();
     renderTime();
 }
+
+
 
 function renderhighScores() {
     var highScores = localStorage.getItem("highScores")
