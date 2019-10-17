@@ -11,7 +11,7 @@ var right = 0
 var wrong = 0
 
 var secondsLeft = 75000;
-
+var questionsArray = [];
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -26,7 +26,7 @@ var questions = [
     ///etc.
 ];
 
-questionsArray[step].choices.forEach(function (choices) {
+questions[0].choices.forEach(function (choices) {
     var option = document.createElement("p")
     option.textContent = choices
     questions.appendChild(option)
