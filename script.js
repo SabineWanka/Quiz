@@ -6,10 +6,10 @@ var backButton = document.querySelector("#backButton");
 var final = document.querySelector("#final");
 var highScores = document.querySelector("#highScores");
 var initialInput = document.querySelector("#initial");
-var score = 0;
+var highScores = 0;
 var right = 0;
 var wrong = 0;
-var secondsLeft = 75000;
+var timeLeft = 75000;
 var secondsElapsed = 0;
 
 
@@ -40,18 +40,15 @@ function setTime() {
 for (var i = 0; i < questions.length; i++) {
     var response = questions[i]
     if (response === questions[i.answer]) {
-        alert("Right");
-        score++;
+        alert("Right" + right);
+        highScores++;
     }
     else {
-        alert("Wrong!");
-        secondsLeft--;
+        alert("Wrong!" + wrong);
+        timeLeft--;
     }
 }
 
-
-
-alert("you got" + score + "/" + questions.length);
 
 function startButton() {
     var questions = document.querySelector("#questions")
@@ -95,21 +92,24 @@ function clearHighscores() {
 
 }
 
+// time starts to count when start button has been clicked 
 function startTimer() {
-    setTime();
+    var timeLeft = 75000;
 
-    interval = setInterval(function () {
-        secondsElapsed++;
-    }, 75000);
-}
-function timeFn() {
-    secondsLeft--;
-    if (secondsLeft === 0) {
-        clearInterval(timerInterval);
+    var timeInterval = setInterval(function){
+        timeLeft-- ;
+
+    if (timeLeft === 0) {
+        clearInterval(timeInterval);
     }
 }
+}
+
+
+
 function stopTimer() {
-    secondsElapsed = 0;
+    // time needs to stop when all questions has been answered 
+    secondsElapsed = 75000;
     setTime();
 
 }
