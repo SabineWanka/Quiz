@@ -6,13 +6,14 @@ var backButton = document.querySelector("#backButton");
 var final = document.querySelector("#final");
 var highScores = document.querySelector("#highScores");
 var initialInput = document.querySelector("#initial");
-var score = 0
-var right = 0
-var wrong = 0
-
+var score = 0;
+var right = 0;
+var wrong = 0;
 var secondsLeft = 75000;
-var questionsArray = [];
-var questions = [
+var secondsElapsed = 0;
+
+
+var questionsArray = [
     {
         title: "Commonly used data types DO NOT include:",
         choices: ["strings", "booleans", "alerts", "numbers"],
@@ -26,7 +27,7 @@ var questions = [
     ///etc.
 ];
 
-questions[0].choices.forEach(function (choices) {
+questionsArray[0].choices.forEach(function (choices) {
     var option = document.createElement("p")
     option.textContent = choices
     questions.appendChild(option)
@@ -47,6 +48,8 @@ for (var i = 0; i < questions.length; i++) {
         secondsLeft--;
     }
 }
+
+
 
 alert("you got" + score + "/" + questions.length);
 
@@ -97,7 +100,6 @@ function startTimer() {
 
     interval = setInterval(function () {
         secondsElapsed++;
-        renderTime();
     }, 75000);
 }
 function timeFn() {
@@ -109,7 +111,7 @@ function timeFn() {
 function stopTimer() {
     secondsElapsed = 0;
     setTime();
-    renderTime();
+
 }
 
 
