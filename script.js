@@ -11,6 +11,7 @@ var right = 0;
 var wrong = 0;
 var timeLeft = 75000;
 var secondsElapsed = 0;
+var questionsIndex = 0;
 
 
 var questionsArray = [
@@ -27,11 +28,6 @@ var questionsArray = [
     ///etc.
 ];
 
-questionsArray[0].choices.forEach(function (choices) {
-    var option = document.createElement("p")
-    option.textContent = choices
-    questions.appendChild(option)
-})
 // getHighScores() which is the sum of the right answer plus the remaining time 
 
 function setTime() {
@@ -91,25 +87,38 @@ function clearHighscores() {
     }
 
 }
+function startQuiz() {
+
+    console.log("index", questionsIndex + 1)
+    questionsArray[questionsIndex].choices.forEach(function (choices) {
+        var option = document.createElement("p")
+        option.textContent = choices
+        questions.appendChild(option)
+    })
+
+    questionsIndex++
+
+}
+
+
 
 // time starts to count when start button has been clicked 
 function startTimer() {
     var timeLeft = 75000;
 
-    var timeInterval = setInterval(function){
-        timeLeft-- ;
+    var timeInterval = setInterval(function () {
+        timeLeft--;
 
-    if (timeLeft === 0) {
-        clearInterval(timeInterval);
-    }
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+        }
+    }, 500)
 }
-}
-
 
 
 function stopTimer() {
     // time needs to stop when all questions has been answered 
-    secondsElapsed = 75000;
+
     setTime();
 
 }
@@ -126,7 +135,7 @@ localStorage.setItem("highScores", highScores)
 
 
 
-startButton.addEventListener("click", startTimer);
+startButton.addEventListener("click", startQuiz);
 submitButton.addEventListener("click", submitQuiz);
 backButton.addEventListener("click", goBack);
 clearButton.addEventListener("click", clearHighscores);
