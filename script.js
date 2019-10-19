@@ -35,7 +35,7 @@ function setTime() {
 }
 for (var i = 0; i < questions.length; i++) {
     var response = questions[i]
-    if (response === questions[i.answer]) {
+    if (response === questions[i].answer) {
         alert("Right" + right);
         highScores++;
     }
@@ -98,7 +98,18 @@ function startQuiz() {
         option.style.padding = "5px"
 
         option.addEventListener("click", function (event) {
-            console.log(event.target.textContent)
+            console.log(event.target.textContent, questionsArray[questionsIndex])
+
+            if (event.target.textContent == questionsArray[questionsIndex].answer) {
+                alert("Right" + right);
+                highScores++;
+
+
+
+            }
+
+
+
         })
 
 
