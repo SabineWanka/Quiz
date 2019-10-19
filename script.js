@@ -93,6 +93,15 @@ function startQuiz() {
     questionsArray[questionsIndex].choices.forEach(function (choices) {
         var option = document.createElement("p")
         option.textContent = choices
+        option.style.color = "white"
+        option.style.backgroundColor = "purple"
+        option.style.padding = "5px"
+
+        option.addEventListener("click", function (event) {
+            console.log(event.target.textContent)
+        })
+
+
         questions.appendChild(option)
     })
 
