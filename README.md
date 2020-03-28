@@ -1,6 +1,6 @@
 # Quiz
 
-
+https://github.com/SabineWanka/Quiz/issues/1#issue-589541822
 
 A code quiz with multiple-choice questions. code quiz with multiple-choice questions, the high scores are stored client side. 
 
