@@ -1,6 +1,6 @@
 # Quiz
 
-https://github.com/SabineWanka/Quiz/issues/1#issue-589541822
+![image](https://user-images.githubusercontent.com/55050594/77820007-69025580-70df-11ea-861b-9c757a3bd97c.png)
 
 A code quiz with multiple-choice questions. code quiz with multiple-choice questions, the high scores are stored client side. 
 
